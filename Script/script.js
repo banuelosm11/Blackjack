@@ -1,6 +1,7 @@
 " use strict ";
 
 var display = document.getElementById("display");
+var inputFromUser;
 
 class Player{
     
@@ -159,8 +160,7 @@ function pickWinnerInitial(){
     }
 
 function play(){
-    
-        var askForBetAmount= prompt("How much would you like to bet?");
+        var askForBetAmount= prompt("How much would you like to bet?"); 
         while(isNaN(askForBetAmount) == true){
             askForBetAmount= prompt("That is not a valid number. How much would you like to bet?")
         }

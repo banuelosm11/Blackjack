@@ -41,57 +41,14 @@ function startPlay(){
     display.innerHTML += "Thanks for playing. Bye";
     
 }
+
+function setUserInput(){
+    inputFromUser = document.getElementById("input").value;
+}
            
     
-    play(){
-        var askForBetAmount= prompt("How much would you like to bet?");
-        var totalBets = takeBets(askForBetAmount);
         
-        initialDeal();
-        pickWinnerInitial();
-        if(pickWinnerInitial() == "Dealer wins"){
-            this.dealer.addToBalance(totalBets);
-            console.log(totalBets+" added to Dealer balance");
-        }else if(pickWinnerInitial() == "Player wins"){
-            this.player1.addToBalance(totalBets);
-            console.log(totalBets+" added to Player balance");
-        }else{
-            continue;
-        }
-        
-        while(pickWinnerInitial() == false){
-            var hitOrStand = prompt("hit or stand?");
-            if(hitOrStand == "hit"){
-                hit();
-                pickWinnerInitial();
-                if(pickWinnerInitial() == "Dealer wins"){
-                    this.dealer.addToBalance(totalBets);
-                    console.log(totalBets+" added to Dealer balance");
-                }else if(pickWinnerInitial() == "Player wins"){
-                    this.player1.addToBalance(totalBets);
-                    console.log(totalBets+" added to Player balance");
-                }else{
-                    continue;
-                }
-            }else{
-                stand();
-                pickWinnerFinal();
-                if(pickWinner() == "Dealer wins"){
-                    this.dealer.addToBalance(totalBets);
-                    console.log(totalBets+" added to Dealer balance");
-                }else if(pickWinner() == "Player wins"){
-                    this.player1.addToBalance(totalBets);
-                    console.log(totalBets+" added to Player balance");
-                }else{
-                    this.player1.addToBalance(totalBets/2);
-                    this.dealer.addToBalance(totalBets/2);
-                    console.log("Tie - original bet added back to player and dealer balance");
-                }
-                break;
-            }
-        }
-        
-    }
+    
     
 
     
